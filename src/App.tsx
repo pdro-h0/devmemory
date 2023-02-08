@@ -53,8 +53,8 @@ const App = () => {
           setShowCount(0);
           }, 500);
         }
-        setMoveCount(moveCount + 1);
-        // setMoveCount(moveCount => moveCount + 1) SE DER ERRADO, COLOCA ESSE
+        // setMoveCount(moveCount + 1);
+        setMoveCount(moveCount => moveCount + 1) 
       }
     }
   }, [showCount, gridItems]);
@@ -63,7 +63,7 @@ const App = () => {
     if(moveCount > 0 && gridItems.every(item => item.permanentShow === true)){
       setPlaying(false)
     }
-  },[])
+  },[moveCount, gridItems])
 
   const resetAndCreateGrid = () => {
     setTimeElapsed(0);
